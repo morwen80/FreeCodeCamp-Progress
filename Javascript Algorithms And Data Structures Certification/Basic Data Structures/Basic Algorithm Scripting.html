@@ -16,14 +16,6 @@ function reverseString(str) {
 
 reverseString("hello");
 
-function reverseString(str) {
-  str = str.split("").reverse().join("");
-  return str;
-}
-
-reverseString("hello");
-
-
 
 <!-- 3. Factorialize a Number -->
 function factorialize(num) {
@@ -42,7 +34,7 @@ factorialize(5);
 
 
 
-<!-- 4. Find the Longest Word in a String -->
+<!-- 4. Find the Longest Word in a String...as in, its length -->
 function findLongestWordLength(str) {
 
   let word = str.split(' ');
@@ -74,3 +66,13 @@ function largestOfFour(arr) {
 
   return total;
 }
+
+
+
+<!-- 6. Confirm the Ending -->
+function confirmEnding(str, target) {
+ return str.slice(str.length - target.length) === target;
+
+}
+
+confirmEnding("Bastian", "n");
