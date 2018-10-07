@@ -404,7 +404,6 @@ var returnedValue = addFive();
 
 
 
-
 <!-- 52. Assignment with a Returned Value -->
 // Example
 var changed = 0;
@@ -424,3 +423,103 @@ function processArg(num) {
 
 // Only change code below this line
 processed = processArg(7);
+
+
+
+
+<!-- 53.  Stand in Line -->
+function nextInLine(arr, item) {
+  // Your code here
+  arr.push(item);
+  return item = arr.shift();
+}
+
+// Test Setup
+var testArr = [1,2,3,4,5];
+
+// Display Code
+console.log("Before: " + JSON.stringify(testArr));
+console.log(nextInLine(testArr, 6)); // Modify this line to test
+console.log("After: " + JSON.stringify(testArr));
+
+
+
+<!-- 54. Understanding Boolean Values -->
+function welcomeToBooleans() {
+
+// Only change code below this line.
+
+return true; // Change this line
+
+// Only change code above this line.
+}
+
+
+
+<!-- 55. Use Conditional Logic with If Statements -->
+// Example
+function ourTrueOrFalse(isItTrue) {
+  if (isItTrue) {
+    return "Yes, it's true";
+  }
+  return "No, it's false";
+}
+
+// Setup
+function trueOrFalse(wasThatTrue) {
+
+  // Only change code below this line.
+
+  if(wasThatTrue) {
+      return "Yes, that was true";
+  }
+  return "No, that was false";
+
+  // Only change code above this line.
+
+}
+
+// Change this value to test
+trueOrFalse(true);
+
+
+
+
+<!-- 56. Comparison with the Equality Operator -->
+// Setup
+function testEqual(val) {
+  if (val == 12) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+// Change this value to test
+testEqual(12);
+
+
+
+<!-- 57. Comparison with the Strict Equality Operator -->
+// Setup
+function testStrict(val) {
+  if (val === 7) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+// Change this value to test
+testStrict(10);
+
+
+<!-- 58. Practice comparing different values -->
+// Setup
+function compareEquality(a, b) {
+  if (a === b) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+
+// Change this value to test
+compareEquality(10, "10");
