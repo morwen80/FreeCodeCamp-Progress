@@ -1,0 +1,353 @@
+<!--
+We have defined a variable called yourArray. Complete the statement by assigning an array of
+at least 5 elements in length to the yourArray variable.
+Your array should contain at least one string, one number, and one boolean.
+-->
+let yourArray = ["apple", 1, true, "love", 15]
+
+
+
+<!-- In order to complete this challenge, set the 2nd position (index 1) of myArray
+to anything you want, besides "b". -->
+let myArray = ["a", "b", "c", "d"];
+myArray[1] = "No longer the B"
+console.log(myArray);
+
+
+
+
+<!-- We have defined a function, mixedNumbers, which we are passing an array as an argument.
+Modify the function by using push() and unshift() to add 'I', 2, 'three' to the beginning of the array and 7, 'VIII', 9
+to the end so that the returned array contains representations  of the numbers 1-9 in order. -->
+function mixedNumbers(arr) {
+
+arr.unshift('I', 2, 'three');
+arr.push(7, 'VIII', 9)
+
+  return arr;
+}
+
+console.log(mixedNumbers(['IV', 5, 'six']));
+
+
+<!-- 4. Remove Items from an Array with pop() and shift() -->
+function popShift(arr) {
+  let popped = arr.pop()
+  let shifted = arr.shift()
+  return [shifted, popped];
+}
+
+console.log(popShift(['challenge', 'is', 'not', 'complete']));
+
+
+
+<!-- 5. Remove Items Using splice() -->
+function sumOfTen(arr) {
+
+  arr.splice(1,2)
+  return arr.reduce((a, b) => a + b);
+}
+
+console.log(sumOfTen([2, 5, 1, 5, 2, 1]));
+
+
+
+<!-- 6.Add Items Using splice() -->
+function htmlColorNames(arr) {
+
+  arr.splice(0, 2, "DarkSalmon", "BlanchedAlmond")
+
+  return arr;
+}
+
+console.log(htmlColorNames(['DarkGoldenRod', 'WhiteSmoke', 'LavenderBlush', 'PaleTurqoise', 'FireBrick']));
+
+
+
+
+<!-- 7. Copy Array Items Using slice() -->
+function forecast(arr) {
+
+  let newWeather = arr.slice(2,4);
+  return newWeather;
+}
+
+console.log(forecast(['cold', 'rainy', 'warm', 'sunny', 'cool', 'thunderstorms']));
+
+
+
+<!-- 8. Copy an Array with the Spread Operator -->
+function copyMachine(arr, num) {
+  let newArr = [];
+  while (num >= 1) {
+
+    newArr.push([...arr]);
+
+    num--;
+  }
+  return newArr;
+}
+
+console.log(copyMachine([true, false, true], 2));
+
+
+
+<!-- 9. Combine Arrays with the Spread Operator -->
+function spreadOut() {
+  let fragment = ['to', 'code'];
+  let sentence = ['learning', ...fragment, 'is', 'fun']
+  return sentence;
+}
+
+console.log(spreadOut());
+
+
+
+<!-- 10. Check For The Presence of an Element With indexOf() -->
+function quickCheck(arr, elem) {
+
+if (arr.indexOf(elem) !== -1) {
+  return true
+}
+else {
+  return false
+}
+
+}
+
+console.log(quickCheck(['squash', 'onions', 'shallots'], 'mushrooms'));
+
+
+
+
+<!-- 11.Iterate Through All an Array's Items Using For Loops -->
+function filteredArray(arr, elem) {
+  let newArr = [...arr];
+  for(let i = 0; i < newArr.length; i++) {
+    for(let j = 0; j < newArr[i].length; j++) {
+      if(newArr[i][j] == elem) {
+        newArr.splice(i,1);
+        i--;
+        break;
+      }
+    }
+  }
+  return newArr;
+}
+
+console.log(filteredArray([[3, 2, 3], [1, 6, 3], [3, 13, 26], [19, 3, 9]], 3));
+
+
+
+<!-- 12. Create complex multi-dimensional arrays -->
+let myNestedArray = [
+  // change code below this line
+  ['unshift', false, 1, 2, 3, 'complex', 'nested'],
+  ['loop', 'shift', 6, 7, 1000, 'method'],
+  ['concat', false, true, 'spread', 'array', ['deep']],
+  ['mutate', 1327.98, 'splice', 'slice', 'push', [['deeper']]],
+  ['iterate', 1.3849, 7, '8.4876', 'arbitrary', 'depth', [[['deepest']]]]
+];
+
+
+
+<!-- 13. Add Key-Value Pairs to JavaScript Objects -->
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28
+};
+
+foods.bananas = 13
+foods.grapes = 35
+foods.strawberries = 27
+
+console.log(foods);
+
+
+
+<!-- 14. Modify an Object Nested Within an Object -->
+let userActivity = {
+  id: 23894201352,
+  date: 'January 1, 2017',
+  data: {
+    totalUsers: 51,
+    online: 42
+  }
+};
+
+userActivity.data.online = 45
+
+console.log(userActivity);
+
+
+
+<!-- 15. Access Property Names with Bracket Notation -->
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+function checkInventory(scannedItem) {
+
+return foods[scannedItem]
+}
+
+console.log(checkInventory("apples"));
+
+
+<!-- 16. Use the delete Keyword to Remove Object Properties -->
+let foods = {
+  apples: 25,
+  oranges: 32,
+  plums: 28,
+  bananas: 13,
+  grapes: 35,
+  strawberries: 27
+};
+
+delete foods.oranges;
+delete foods.plums;
+delete foods.strawberries
+
+console.log(foods);
+
+
+
+<!-- 17. Check if an Object has a Property -->
+let users = {
+  Alan: {
+    age: 27,
+    online: true
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: true
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function isEveryoneHere(obj) {
+  <!-- // change code below this line -->
+if (users.hasOwnProperty('Alan', 'Jeff', 'Sarah', 'Ryan')) {
+  return true}
+  else {
+    return false
+  }
+  <!-- // change code above this line -->
+}
+
+console.log(isEveryoneHere(users));
+
+
+
+<!-- 18. Iterate Through the Keys of an Object with a for...in Statement -->
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function countOnline(obj) {
+  // change code below this line
+var count = 0;
+    for (let user in obj) {
+        if (obj[user]["online"] === true) {
+            count++
+        }
+    }
+return count
+}
+
+  // change code above this line
+
+
+console.log(countOnline(users))
+
+
+
+<!-- 19. Generate an Array of All Object Keys with Object.keys() -->
+let users = {
+  Alan: {
+    age: 27,
+    online: false
+  },
+  Jeff: {
+    age: 32,
+    online: true
+  },
+  Sarah: {
+    age: 48,
+    online: false
+  },
+  Ryan: {
+    age: 19,
+    online: true
+  }
+};
+
+function getArrayOfUsers(obj) {
+  <!--  change code below this line -->
+return Object.keys(obj)
+  <!--  change code above this line -->
+}
+
+console.log(getArrayOfUsers(users));
+
+
+
+
+<!-- 20. Modify an Array Stored in an Object -->
+let user = {
+  name: 'Kenneth',
+  age: 28,
+  data: {
+    username: 'kennethCodesAllDay',
+    joinDate: 'March 26, 2016',
+    organization: 'freeCodeCamp',
+    friends: [
+      'Sam',
+      'Kira',
+      'Tomo'
+    ],
+    location: {
+      city: 'San Francisco',
+      state: 'CA',
+      country: 'USA'
+    }
+  }
+};
+
+function addFriend(userObj, friend) {
+  <!-- // change code below this line   -->
+userObj.data.friends.push(friend);
+
+return userObj.data.friends
+  <!-- // change code above this line -->
+}
+
+console.log(addFriend(user, 'Pete'));
