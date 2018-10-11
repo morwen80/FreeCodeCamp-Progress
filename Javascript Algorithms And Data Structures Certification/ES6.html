@@ -113,3 +113,21 @@ console.log(arr2);
 
 
 <!-- Use Destructuring Assignment to Assign Variables from Objects -->
+const AVG_TEMPERATURES = {
+  today: 77.5,
+  tomorrow: 79
+};
+
+function getTempOfTmrw(avgTemperatures) {
+  "use strict";
+  // change code below this line
+  const {tomorrow: tempOfTomorrow} = (AVG_TEMPERATURES); <!-- La sintassi per assegnare una value (la value di TOMORROW)
+                                  a un altro oggetto (la costante tempOfTomorrow), e' la seguente:
+                                const {value wanted in object : variable to assign it to} = object where it is located
+                              stranamente, AVG_TEMPERATURES mi faceva errore finche' non l'ho messa fra parentesi, come
+                                se fosse un argument -->
+  // change code above this line
+  return tempOfTomorrow;
+}
+
+console.log(getTempOfTmrw(AVG_TEMPERATURES)); // should be 79
