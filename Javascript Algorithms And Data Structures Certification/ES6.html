@@ -72,3 +72,17 @@ const squaredIntegers = arr.filter( (num) => num > 0 && num % parseInt(num) === 
 // test your code
 const squaredIntegers = squareList(realNumberArray);
 console.log(squaredIntegers);
+
+
+
+
+
+<!-- Set Default Parameters for Your Functions -->
+const increment = (function() {
+  "use strict";
+  return function increment(number, value = 1 ) { <!--  so when VALUE is not specified, it's replaced by 1-->
+    return number + value;
+  };
+})();
+console.log(increment(5, 2)); // returns 7
+console.log(increment(5)); // returns 6
