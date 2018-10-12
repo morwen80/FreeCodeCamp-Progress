@@ -206,11 +206,38 @@ return function half({max, min}) {
     return (max + min) / 2.0;
   };
 
-
-
-
   // change code above this line
 
 })();
 console.log(stats); // should be object
 console.log(half(stats)); // should be 28.015
+
+
+
+
+
+<!-- Create Strings using Template Literals -->
+const result = {
+  success: ["max-length", "no-amd", "prefer-arrow-functions"],
+  failure: ["no-var", "var-on-top", "linebreak"],
+  skipped: ["id-blacklist", "no-dup-keys"]
+};
+function makeList(arr) {
+  "use strict";
+
+  // change code below this line
+
+  const resultDisplayArray = []
+  arr.map (item => resultDisplayArray.push(`<li class="text-warning">${item}</li>`))
+
+//change code above this line
+
+  return resultDisplayArray;
+}
+/**
+ * makeList(result.failure) should return:
+ * [ `<li class="text-warning">no-var</li>`,
+ *   `<li class="text-warning">var-on-top</li>`,
+ *   `<li class="text-warning">linebreak</li>` ]
+ **/
+const resultDisplayArray = makeList(result.failure);
