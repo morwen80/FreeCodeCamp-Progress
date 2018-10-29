@@ -28,3 +28,13 @@ Add this on top of the document:
     $("#target3").addClass("animated fadeout");
   });
 </script>
+
+
+<!-- Target the Same Element with Multiple jQuery Selectors -->
+<script>
+  $(document).ready(function() {
+    $("button").addClass("animated");
+    $(".btn").addClass("shake");
+    $("#target1").addClass("btn-primary")
+  });
+</script>
