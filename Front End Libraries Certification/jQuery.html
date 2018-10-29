@@ -117,3 +117,14 @@ the id #target1 -->
     $("#right-well").children().css("color", "orange")
   });
 </script>
+
+
+
+<!-- Target a Specific Child of an Element Using jQuery -->
+<!-- This allows you to select all the nth elements with the target class or element type.
+Here's how you would give the 2nd element in each well the bounce class -->
+<script>
+  $(document).ready(function() {
+    $(".target:nth-child(2)").addClass("animated bounce")
+  });
+</script>
