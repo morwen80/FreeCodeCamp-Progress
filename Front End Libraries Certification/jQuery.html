@@ -100,3 +100,12 @@ the id #target1 -->
     $("#target5").clone().appendTo("#left-well");
   });
 </script>
+
+
+<!-- Target the Parent of an Element Using jQuery -->
+<!-- Following, we set the bg color red for the parent of the element with id target1 -->
+<script>
+  $(document).ready(function() {
+    $("#target1").parent().css("background", "red")
+  });
+</script>
