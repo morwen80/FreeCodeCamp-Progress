@@ -116,3 +116,17 @@ There should be 10 different classes from text-1 to text-10. Then set font-size 
 <!-- Split Your Styles into Smaller Chunks with Partials -->
 // The main.scss file
 @import 'variables'
+
+
+<!-- Extend One Set of CSS Styles to Another Element -->
+<style type='text/sass'>
+  .info{
+    width: 200px;
+    border: 1px solid black;
+    margin: 0 auto;
+  }
+  .info-important {
+  @extend .info;
+  background-color: magenta;
+  }
+</style>
