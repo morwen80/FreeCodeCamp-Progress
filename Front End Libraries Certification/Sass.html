@@ -98,3 +98,16 @@ Each class should set the background-color the respective color. -->
     width: 200px;
   }
 </style>
+
+
+
+<!-- Apply a Style Until a Condition is Met with @while -->
+<!-- se @while to create a series of classes with different font-sizes.
+There should be 10 different classes from text-1 to text-10. Then set font-size to 5px multiplied by the current index number. -->
+<style type='text/sass'>
+  $x: 1;
+  @while $x < 11 {
+    .text-#{$x} { font-size: 5px * $x};
+    $x: $x + 1;
+  }
+</style>
