@@ -123,3 +123,24 @@ function booWho(bool) {
 }
 
 booWho(null);
+
+
+
+<!-- 11. Title Case a Sentence -->
+<!-- AKA Capitalize every word in a string -->
+
+function titleCase(str) {
+  let lower = str.toLowerCase().split(" ");
+  for (let i = 0; i < lower.length; i++) {
+
+    lower[i] = lower[i].charAt(0).toUpperCase() + lower[i].substring(1);
+  }
+return lower.join(' ');
+
+}
+
+titleCase("I'm a little tea pot");
+
+
+
+<!-- Slice and Splice -->
