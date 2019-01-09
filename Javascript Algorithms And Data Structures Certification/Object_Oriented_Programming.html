@@ -49,8 +49,8 @@ function Dog() {
 }
 
 <!-- 6. Use a Constructor to Create Objects -->
-On the last line, we created a new instance of Dog named hound.
-Hound has all the proprerties of Dog,so we have hound.name --> #Rupert
+<!-- On the last line, we created a new instance of Dog named hound.
+Hound has all the proprerties of Dog,so we have hound.name ... Rupert -->
 function Dog() {
   this.name = "Rupert";
   this.color = "brown";
@@ -58,3 +58,16 @@ function Dog() {
 }
 // Add your code below this line
 let hound = new Dog()
+
+
+<!-- 7. Extend Constructors to Receive Arguments -->
+<!-- Creating an object with parameters, so it can be applied to everything 
+(the example n.6, all the new instances of Dogs were named Rupert, for example.
+Here we can set new parameters when we create the object.) -->
+function Dog(name, color) {
+  this.name = name;
+  this.color = color;
+  this.numLegs = 4
+}
+
+let terrier = new Dog('Anammazzari', 'black')
