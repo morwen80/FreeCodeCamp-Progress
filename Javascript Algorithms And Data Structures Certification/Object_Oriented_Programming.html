@@ -25,3 +25,16 @@ let dog = {
 };
 
 dog.sayLegs();
+
+
+<!-- 4. Make Code More Reusable with the this Keyword -->
+<!-- (NOTE: I change "dog.numLegs" into "this.numLegs" - so even if the object's name 
+is changed, we don't have to change all the references in the code. THIS, here, is
+associated with.) -->
+let dog = {
+  name: "Spot",
+  numLegs: 4,
+  sayLegs: function() {return "This dog has " + this.numLegs + " legs.";}
+};
+
+dog.sayLegs();
