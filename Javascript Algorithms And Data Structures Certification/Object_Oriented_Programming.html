@@ -28,7 +28,7 @@ dog.sayLegs();
 
 
 <!-- 4. Make Code More Reusable with the this Keyword -->
-<!-- (NOTE: I change "dog.numLegs" into "this.numLegs" - so even if the object's name 
+<!-- (NOTE: I change "dog.numLegs" into "this.numLegs" - so even if the object's name
 is changed, we don't have to change all the references in the code. THIS, here, is
 associated with.) -->
 let dog = {
@@ -38,3 +38,12 @@ let dog = {
 };
 
 dog.sayLegs();
+
+
+<!-- 5. Define a Constructor Function -->
+<!-- Constructors are functions that create new objects. They use THIS inside -->
+function Dog() {
+  this.name = "Laura";
+  this.color = 'Shit-brown';
+  this.numLegs = 5;
+}
