@@ -92,6 +92,7 @@ myHouse instanceof House;  ##returns true
 
 
 <!-- 8. Understand Own Properties -->
+<!-- Own properties are defined directly on the object instance itself -->
 function Bird(name) {
   this.name = name;
   this.numLegs = 2;
@@ -99,7 +100,7 @@ function Bird(name) {
 
 let canary = new Bird("Tweety");
 let ownProps = [];
-// Add your code below this line
+<!-- // Add your code below this line -->
 for (let property in canary) {
   if(canary.hasOwnProperty(property)) {
     ownProps.push(property);
@@ -114,3 +115,26 @@ function Dog(name) {
 }
 
 let beagle = new Dog("Snoopy");
+
+
+<!-- 10. Iterate Over All Properties -->
+<!-- Adding own properties to the array ownProps and prototype properties to the array prototypeProps -->
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype.numLegs = 4;
+
+let beagle = new Dog("Snoopy");
+
+let ownProps = [];
+let prototypeProps = [];
+
+// Add your code below this line
+for (let property in beagle) {
+  if(beagle.hasOwnProperty(property)) {
+    ownProps.push(property);
+  } else {
+    prototypeProps.push(property);
+  }
+}
