@@ -156,3 +156,22 @@ function joinDogFraternity(candidate) {
   return false;
   }
 }
+
+
+<!-- 12.  Change the Prototype to a New Object -->
+<!-- We can set multiple propotypes properties, so they are added all at once -->
+<!--  !!! IMPORTANT: CHECK THE NEXT EXERCISE!! -->
+function Dog(name) {
+  this.name = name;
+}
+
+Dog.prototype = {
+  <!-- // Add your code below this line -->
+  numLegs: 4,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
