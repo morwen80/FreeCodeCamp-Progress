@@ -138,3 +138,21 @@ for (let property in beagle) {
     prototypeProps.push(property);
   }
 }
+
+<!-- 11. Understand the Constructor Property -->
+<!-- With the constructor property is possible to check for a property to find out
+what kind of object it is. Since the constructor property can be overwritten
+it’s generally better to use the instanceof method to check the type of an object. -->
+
+function Dog(name) {
+  this.name = name;
+}
+
+<!-- // Add your code below this line -->
+function joinDogFraternity(candidate) {
+  if (candidate.constructor === Dog) {
+  return true;
+} else {
+  return false;
+  }
+}
