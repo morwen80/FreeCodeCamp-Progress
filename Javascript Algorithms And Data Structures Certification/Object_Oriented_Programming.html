@@ -175,3 +175,24 @@ Dog.prototype = {
     console.log("My name is " + this.name);
   }
 };
+
+
+<!-- 13. Remember to Set the Constructor Property when Changing the Prototype -->
+Manually setting the prototype (like in n.12) to a new object erases the constructor
+ property! To fix this, remember to define the constructor property:
+
+ function Dog(name) {
+  this.name = name;
+}
+
+// Modify the code below this line
+Dog.prototype = {
+  constructor: Dog,  <!-- <------ ADD THE CONSTRUCTOR HERE -->
+  numLegs: 2,
+  eat: function() {
+    console.log("nom nom nom");
+  },
+  describe: function() {
+    console.log("My name is " + this.name);
+  }
+};
