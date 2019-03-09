@@ -219,7 +219,7 @@ Dog.prototype.isPrototypeOf(beagle);   <!-- returns true -->
 Object.prototype.isPrototypeOf(Dog.prototype);
 
 
-<! 15. -- Use Inheritance So You Don't Repeat Yourself -->
+<!-- 15. Use Inheritance So You Don't Repeat Yourself -->
 function Cat(name) {
   this.name = name; 
 }
@@ -248,7 +248,7 @@ Animal.prototype = {
 dog.sayLegs();
 
 
-<! -- 16. Inherit Behaviors from a Supertype -->
+<!-- 16. Inherit Behaviors from a Supertype -->
 function Animal() { }
 
 Animal.prototype = {
@@ -265,3 +265,22 @@ let beagle = Object.create(Animal.prototype)
 
 duck.eat(); // Should print "nom nom nom"
 beagle.eat(); // Should print "nom nom nom"
+
+
+<!-- 17. Set the Child's Prototype to an Instance of the Parent -->
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+function Dog() { }
+Dog.prototype = Object.create(Animal.prototype)
+// Add your code below this line
+
+
+let beagle = new Dog();
+beagle.eat();  // Should print "nom nom nom"
