@@ -37,36 +37,6 @@ let dog = {
   sayLegs: function() {return "This dog has " + this.numLegs + " legs.";}
 };
 
-
-<! -- Use Inheritance So You Don't Repeat Yourself -->
-function Cat(name) {
-  this.name = name; 
-}
-
-Cat.prototype = {
-  constructor: Cat
-};
-
-function Bear(name) {
-  this.name = name; 
-}
-
-Bear.prototype = {
-  constructor: Bear
-};
-
-function Animal() { }
-
-Animal.prototype = {
-  constructor: Animal,
-  eat: function() {
-    console.log("nom nom nom");
-  }
-};
-
-dog.sayLegs();
-
-
 <!-- 5. Define a Constructor Function -->
 <!-- Constructors are functions that create new objects. They use THIS inside -->
 function Dog() {
@@ -247,3 +217,51 @@ let beagle = new Dog("Snoopy");
 
 Dog.prototype.isPrototypeOf(beagle);   <!-- returns true -->
 Object.prototype.isPrototypeOf(Dog.prototype);
+
+
+<! 15. -- Use Inheritance So You Don't Repeat Yourself -->
+function Cat(name) {
+  this.name = name; 
+}
+
+Cat.prototype = {
+  constructor: Cat
+};
+
+function Bear(name) {
+  this.name = name; 
+}
+
+Bear.prototype = {
+  constructor: Bear
+};
+
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal,
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+dog.sayLegs();
+
+
+<! -- 16. Inherit Behaviors from a Supertype -->
+function Animal() { }
+
+Animal.prototype = {
+  constructor: Animal, 
+  eat: function() {
+    console.log("nom nom nom");
+  }
+};
+
+// Add your code below this line
+
+let duck = Object.create(Animal.prototype)
+let beagle = Object.create(Animal.prototype)
+
+duck.eat(); // Should print "nom nom nom"
+beagle.eat(); // Should print "nom nom nom"
