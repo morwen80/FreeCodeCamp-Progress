@@ -17,8 +17,6 @@ class DisplayMessages extends React.Component {
 
 <!-- Manage State Locally First -->
 
-#############. STILL NOT WORKING ###########
-
 class DisplayMessages extends React.Component {
   constructor(props) {
     super(props);
@@ -37,30 +35,29 @@ class DisplayMessages extends React.Component {
     })
   };
 
-
-  const submitMessage = (event) => {
+  submitMessage(event){
+    let updatedMessages = [...this.state.messages, this.state.input];
     event.preventDefault();
     this.setState({
-      messages: [...this.state.messages, this.state.input],
-      input: ''
+      messages: updatedMessages,
+      input: ""
     })
   };
 
   render() {
-    const messagesList = this.state.messages.map( m => <li>m</li>)
     return (
       <div>
         <h2>Type in a new Message:</h2>
         { /* render an input, button, and ul here */ }
-        <form onSubmit={this.submitMessage}>
+        
       <input type="text" value={this.state.input} onChange={this.handleChange} />
-      <button type="submit">Add the Message</button>
-      </form>
+      <button type="submit" onClick={this.submitMessage}>Add message</button>
       <ul>
-        {messagesList}
+        {this.state.messages.map( m => <li>{m}</li>)}
       </ul>
         { /* change code above this line */ }
       </div>
     );
   }
 };
+
