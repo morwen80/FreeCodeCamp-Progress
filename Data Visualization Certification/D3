@@ -644,3 +644,18 @@
       .text(output);
   </script>
 </body>
+
+
+// 25. Use the d3.max and d3.min Functions to Find Minimum and Maximum Values in a Dataset
+<body>
+  <script>
+    const positionData = [[1, 7, -4],[6, 3, 8],[2, 8, 3]]
+    
+    const output = d3.max(positionData, (d) => d[2])
+
+    
+    d3.select("body")
+      .append("h2")
+      .text(output)
+  </script>
+</body>
