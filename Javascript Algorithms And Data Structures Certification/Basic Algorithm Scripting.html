@@ -18,15 +18,8 @@ reverseString("hello");
 
 <!-- 3. Factorialize a Number -->
 function factorialize(num) {
-let result = num
- if (num === 0 || num === 1)
-    return 1;
-  while (num > 1) {
-    num--;
-   result *= num;
-  }
-  return result;
-
+  if (num === 0) { return 1; }
+  return num * factorialize(num-1);
 }
 
 factorialize(5);
